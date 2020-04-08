@@ -1,0 +1,297 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+<link rel="stylesheet" href="../Content/assets/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="../Content/assets/css/font-awesome.min.css">
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<!-- Theme style -->
+<link rel="stylesheet" href="../Content/assets/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="../Content/assets/css/_all-skins.min.css">
+<link rel="stylesheet" href="../Content/assets/css/dataTables.bootstrap.min.css">
+<link href="~/Content/assets/plugins/bootstrap3-wysihtml5.min.css" rel="stylesheet" />
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Scratch
+            <small>Details</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Employee</a></li>
+            <li><a href="#">Create</a></li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <h3 class="box-title">Add Employee</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Custom Tabs -->
+                        <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs">
+
+                                <li class="pull-right"><button type="button" onclick="BacktoList();" class="btn btn-sm btn-success">GO TO EMPLOYEE LIST</button></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab_1">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <!-- /.form-group -->
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" id="txtname" name="Name" placeholder="Enter Name" required>
+                                                <span id="errname" style="color:red;"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Qualification</label>
+                                                <select id="ddlqualifi" name="qualification" class="form-control">
+                                                    <option value="0">Select</option>
+                                                    <option value="Primary education">Primary education</option>
+                                                    <option value="Secondary education">Secondary education or high school</option>
+                                                    <option value="GED">GED</option>
+                                                    <option value="Vocational qualification">Vocational qualification</option>
+                                                    <option value="Bachelor's degree">Bachelor's degree</option>
+                                                    <option value="Master's degree">Master's degree</option>
+                                                    <option value="Doctorate or higher">Doctorate or higher</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Joining Date</label>
+                                                <input type="text" class="form-control" id="datepicker" name="joiningdt" placeholder="Select Date">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Designation</label>
+                                                <input type="text" class="form-control" id="txtdesi" name="Designation" placeholder="Enter Designation">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <!-- /.form-group -->
+
+                                            <div class="form-group">
+                                                <label>Date of birth</label>
+                                                <input type="text" class="form-control" id="datepicker1" name="dob" placeholder="Select Date of birth">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Experience</label>
+                                                <input type="text" class="form-control" id="txtexp" name="experience" placeholder="Enter Experience">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Salary</label>
+                                                <input type="number" class="form-control" id="txtsal" name="salary" placeholder="Enter Salary">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Hobbies</label>
+                                                <select id="ddlhobbies" name="hobbies" class="form-control">
+                                                    <option value="0">Select Hobbies</option>
+                                                    <option value="Reading">Reading</option>
+                                                    <option value="Swimming">Swimming</option>
+                                                    <option value="Watching">Watching</option>
+                                                    <option value="Movies">Movies</option>
+                                                    <option value="Playing">Playing</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /.tab-content -->
+                        </div>
+                        <!-- nav-tabs-custom -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-header with-border" style="padding-bottom:2%;">
+                <h3 class="box-title"></h3>
+                <div class="box-tools pull-right">
+                    <button type="button" onclick="Save();" class="btn btn-sm btn-primary">SAVE</button>
+                    <button type="button" onclick="BacktoList();" class="btn btn-sm btn-danger">CANCEL</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js' type='text/javascript'></script>
+<script src="../Content/assets/js/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../Content/assets/js/jquery-ui.min.js"></script>
+<script src="~/Content/assets/plugins/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- jvectormap -->
+<script src="../Content/assets/js/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="../Content/assets/js/jquery-jvectormap-world-mill-en.js"></script>
+
+<script src="../Content/assets/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<!-- Slimscroll -->
+<script src="../Content/assets/js/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../Content/assets/js/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../Content/assets/js/adminlte.min.js"></script>
+<!-- Sparkline -->
+<script src="../Content/assets/js/jquery.sparkline.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="../Content/assets/plugins/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../Content/assets/js/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../Content/assets/js/demo.js"></script>
+<script src="    https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript">
+
+    $('#datepicker').datepicker({
+        dateFormat: "dd/M/yy",
+        changeYear: true,
+        changeMonth: true,
+        showMonthAfterYear: true,
+        orientation: "bottom",
+        onChangeMonthYear: function () {
+            console.log('o');
+        }
+    });
+
+    $('#datepicker1').datepicker({
+        dateFormat: "dd/M/yy",
+        changeYear: true,
+        changeMonth: true,
+        showMonthAfterYear: true,
+        orientation: "bottom",
+        onChangeMonthYear: function () {
+            console.log('o');
+        }
+    });
+
+    function Save() {
+        validate();
+        var name = $("#txtname").val();
+        var qualification = $("#ddlqualifi").val();
+        var joiningdt = $("#datepicker").val();
+        var experience = $("#txtexp").val();
+        var dob = $("#datepicker1").val();
+        var salary = $("#txtsal").val();
+        var designation = $("#txtdesi").val();
+        var hobbies = $("#ddlhobbies").val();
+
+       {
+            $.getJSON("/Employee/Save",
+                {
+                    name: name,
+                    qualification: qualification,
+                    joiningdt: joiningdt,
+                    experience: experience,
+                    dob: dob,
+                    salary: salary,
+                    designation: designation,
+                    hobbies: hobbies
+                },
+
+                function (json) {
+                    if (json[0].Result > 0) {
+
+                        alert(json[0].ResultText);
+                        clearscreen();
+                    }
+                    else {
+                        alert(json[0].ResultText);
+                    }
+                });
+        }
+    }
+
+    function validate() {
+
+        if (($("#txtname").val() == "") || ($("#txtname").val() == null)) {
+            alert("please enter name");
+            $("#txtname").focus();
+        }
+    }
+
+    $("#txtname").change(function () {
+        var name = $("#txtname").val();
+        {
+            $.getJSON("/Employee/ChkName",
+                {
+                    name: name,
+                },
+
+                function (json) {
+                    if (json[0].Result > 0) {
+                        $("#errname").text("");
+                    }
+                    else {
+                        $("#txtname").focus();
+                        $("#txtname").val("");
+                        $("#errname").text("Duplicate name is not allowed");
+                    }
+                });
+        }
+        //alert("The text has been changed.");
+    });
+
+
+    function clearscreen() {
+        $("#txtname").val("");
+        $("#ddlqualifi").val("0");
+        $("#datepicker").val("");
+        $("#txtexp").val("");
+        $("#datepicker1").val("");
+        $("#txtsal").val("");
+        $("#txtdesi").val("");
+        $("#ddlhobbies").val("0");
+    }
+
+    var Notification = function (Type, Message, Title) {
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "positionClass": "toast-top-full-width",
+            "onclick": null,
+            "showDuration": "1000",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "slideDown",
+            "hideMethod": "slideUp"
+        }
+        if (Type == "success") {
+            toastr.success(Message, Title);
+        }
+        if (Type == "error") {
+            toastr.error(Message, Title);
+        }
+        if (Type == "warning") {
+            toastr.warning(Message, Title);
+        }
+    }
+
+
+    function BacktoList() {
+        window.location.href = '@Url.Action("Index", "Employee")';
+    }
+</script>
+
